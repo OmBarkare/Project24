@@ -18,7 +18,7 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	ball = new Paperball(50,400,30,30);
+	ball = new Paperball(50,400,20);
 	ground = new Ground(400,550,800,10);
 	rightWall = new Ground(800,300,8,800);
 	dustbin = new Dustbin(700,540);
@@ -34,7 +34,6 @@ function draw() {
 	ball.display();
 	ground.display();
 	dustbin.display();
-	keyPressed();
 	Engine.update(engine);
 	drawSprites();
  
@@ -42,12 +41,6 @@ function draw() {
 
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(ball.body,ball.body.position,{x:0,y:-10})
+		Matter.Body.applyForce(ball.body,ball.body.position,{x:65,y:-70})
 		}
-	else if (keyCode === RIGHT_ARROW){
-		Matter.Body.applyForce(ball.body,ball.body.position,{x:8,y:0})
-	}
-	else if(keyCode === LEFT_ARROW){
-		Matter.Body.applyForce(ball.body,ball.body.position,{x:-8,y:0})
-	}else{Matter.Body.applyForce(ball.body,ball.body.position,{x:0,y:0})}
 }
